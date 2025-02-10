@@ -95,7 +95,7 @@ src/
 # START HERE - Local
 ## **Step 1: Clone The Repo**
 ```bash
-git clone https://github.com/alahl1/NCAAGameHighlights.git
+git clone https://github.com/Stormz99/NCAAGameHighlights
 cd src
 ```
 ## **Step 2: Add API Key to AWS Secrets Manager**
