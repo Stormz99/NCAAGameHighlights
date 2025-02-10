@@ -144,11 +144,11 @@ Edit the Trust Policy and replace it with this:
   ]
 }
 ```
-[setting_permissions](./images/python_scripts/setting-permissions-1.png)
-[setting_permissions_2](./images/python_scripts/setting-permissions-2.png)
-[setting_permission_3](./images/python_scripts/setting-permissions-3.png)
-[trustPolicy](./images/python_scripts/trust-policy.png)
-[overview](./images/python_scripts/overview.png)
+![setting_permissions](./images/python_scripts/setting-permissions-1.png)
+![setting_permissions_2](./images/python_scripts/setting-permissions-2.png)
+![setting_permission_3](./images/python_scripts/setting-permissions-3.png)
+![trustPolicy](./images/python_scripts/trust-policy.png)
+![overview](./images/python_scripts/overview.png)
 
 
 ## **Step 4: Update .env file**
@@ -171,31 +171,31 @@ Run:
 ```bash
 docker build -t highlight-processor .
 ```
-[dockerInstallation](./images/python_scripts/docker-installation.png)
+![dockerInstallation](./images/python_scripts/docker-installation.png)
 Run the Docker Container Locally:
 ```bash
 docker run --env-file .env highlight-processor
 ```
-[dockerOverview](./images/python_scripts/docker-overview.png)
-[dockerInstalled](./images/python_scripts/docker-installed.png)
-[dockerImages](.//images/python_scripts/docker-images.png)
+![dockerOverview](./images/python_scripts/docker-overview.png)
+![dockerInstalled](./images/python_scripts/docker-installed.png)
+![dockerImages](.//images/python_scripts/docker-images.png)
 [dockerImagesGrep](./images/python_scripts/docker-images-grep.png)
-[dockerRun](./images/python_scripts/docker-run.png)
+![dockerRun](./images/python_scripts/docker-run.png)
 
 This will run fetch.py, process_one_video.py and mediaconvert_process.py and the following files should be saved in your S3 bucket:
 
 Optional - Confirm there is a video uploaded to s3://<your-bucket-name>/videos/first_video.mp4
 
-[s3Bucket](./images/python_scripts/inside-s3-bucket.png)
-[insideHighlight](./images/python_scripts/inside-highlights.png)
+![s3Bucket](./images/python_scripts/inside-s3-bucket.png)
+![insideHighlight](./images/python_scripts/inside-highlights.png)
 
 Optional - Confirm there is a video uploaded to s3://<your-bucket-name>/processed_videos/
 
-[processedVideos](./images/python_scripts/processed-videos.png)
-[watchingVideos](./images/python_scripts/watching-videos.png)
-[watchingVideosImage](./images/python_scripts/watching-highlight-2.png)
-[emptyingBucket](./images/python_scripts/emptying-bucket.png)
-[deletingBucket](./images/python_scripts/deleting-bucket.png)
+![processedVideos](./images/python_scripts/processed-videos.png)
+![watchingVideos](./images/python_scripts/watching-videos.png)
+![watchingVideosImage](./images/python_scripts/watching-highlight-2.png)
+![emptyingBucket](./images/python_scripts/emptying-bucket.png)
+![deletingBucket](./images/python_scripts/deleting-bucket.png)
 
 ### **What I Learned**
 1. Working with Docker and AWS Services
