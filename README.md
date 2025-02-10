@@ -17,7 +17,7 @@ process_one_video.py performs the following actions:
 
 Connects to the S3 bucket and retrieves the JSON file.
 Extracts the first video URL from within the JSON file.
-Downloads the video fiel from the internet into the memory using the requests library.
+Downloads the video file the requests library.
 Saves the video as a new file in the S3 bucket under a different folder (videos/)
 Logs the status of each step
 
@@ -144,6 +144,12 @@ Edit the Trust Policy and replace it with this:
   ]
 }
 ```
+[setting_permissions](./images/python_scripts/setting-permissions-1.png)
+[setting_permissions_2](./images/python_scripts/setting-permissions-2.png)
+[setting_permission_3](./images/python_scripts/setting-permissions-3.png)
+[trustPolicy](./images/python_scripts/trust-policy.png)
+[overview](./images/python_scripts/overview.png)
+
 
 ## **Step 4: Update .env file**
 1. RapidAPI_KEY: Ensure that you have successfully created the account and select "Subscribe To Test" in the top left of the Sports Highlights API
@@ -165,27 +171,36 @@ Run:
 ```bash
 docker build -t highlight-processor .
 ```
-
+[dockerInstallation](./images/python_scripts/docker-installation.png)
 Run the Docker Container Locally:
 ```bash
 docker run --env-file .env highlight-processor
 ```
-           
+[dockerOverview](./images/python_scripts/docker-overview.png)
+[dockerInstalled](./images/python_scripts/docker-installed.png)
+[dockerImages](.//images/python_scripts/docker-images.png)
+[dockerImagesGrep](./images/python_scripts/docker-images-grep.png)
+[dockerRun](./images/python_scripts/docker-run.png)
+
 This will run fetch.py, process_one_video.py and mediaconvert_process.py and the following files should be saved in your S3 bucket:
 
 Optional - Confirm there is a video uploaded to s3://<your-bucket-name>/videos/first_video.mp4
 
+[s3Bucket](./images/python_scripts/inside-s3-bucket.png)
+[insideHighlight](./images/python_scripts/inside-highlights.png)
+
 Optional - Confirm there is a video uploaded to s3://<your-bucket-name>/processed_videos/
 
-### **What We Learned**
+[processedVideos](./images/python_scripts/processed-videos.png)
+[watchingVideos](./images/python_scripts/watching-videos.png)
+[watchingVideosImage](./images/python_scripts/watching-highlight-2.png)
+[emptyingBucket](./images/python_scripts/emptying-bucket.png)
+[deletingBucket](./images/python_scripts/deleting-bucket.png)
+
+### **What I Learned**
 1. Working with Docker and AWS Services
 2. Identity Access Management (IAM) and least privilege
 3. How to enhance media quality 
-
-### **Future Enhancements**
-1. Using Terraform to enhance the Infrastructure as Code (IaC)
-2. Increasing the amount of videos process and converted with AWS Media Convert
-3. Change the date from static (specific point in time) to dyanmic (now, last 30 days from today's date,etc)
 
 # Part 2 - Terraform Bonus
 
@@ -265,11 +280,8 @@ bash ncaaprojectcleanup.sh
 ### **Review Video Files**
 1. Navigate to the S3 Bucket and confirm there is a json video in the highlights folder and a video in the videos folder
 
-### **What We Learned**
+### **What I Learned**
 1. Deploying local docker images to ECR 
 2. A high level overview of terraform files
 3. Networking - VPCs, Internet Gateways, private subnets and public subnets
 4. SSM for saving secrets and pulling into terraform
-
-### **Future Enhancements**
-1. Automating the creation of VPCs/networking infra, media endpoint
