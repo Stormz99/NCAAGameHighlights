@@ -8,9 +8,16 @@
 .env
 .env.*  # For example, .env.local, .env.development, etc.
 
-# Ignore terrform variable files 
+# Ignore Terraform variable files
 *.tfvars
 *.tfvars.json
+
+# Ignore the terraform.tfvars file in the terraform folder
+terraform/terraform.tfvars
+
+# Ignore .terraform directory and .terraform.lock.hcl file
+.terraform/
+.terraform.lock.hcl
 
 # ----------------------------
 # Optional: Ignore Other Files
